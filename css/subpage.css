@@ -1,0 +1,242 @@
+/* 全局样式 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 50px;
+  padding-bottom: 20px;
+}
+
+/* 导航栏样式 */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 当前所在页面：导航链接样式 */
+.nav-link-active {
+  font-size: 20px;
+  color: #1E90FF;
+  text-decoration: none;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* 当前所在页面：导航链接下方线段样式 */
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background-color: #1E90FF;
+  transform: scaleX(0.8);/* 将线段的水平宽度（即线段长度）缩放为 80% */
+}
+
+/* 其他页面：导航链接样式 */
+.nav-link {
+  font-size: 20px;
+  color: #091E3E;
+  text-decoration: none;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* 其他页面：鼠标悬停时链接变蓝 */
+.nav-link:hover {
+  color: #1E90FF;
+
+  /* 其他页面：导航链接下方线段样式 */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background-color: #1E90FF;
+  transform: scaleX(0);/* 线段的初始长度缩放比例为0，使得线段不可见 */
+  transition: transform 0.3s ease;/* 线段长度变化的过渡效果：当线段长度变化时，用 0.3 秒的时间平滑过渡 */
+}
+
+}
+/* 其他页面：鼠标悬停时线段变长 */
+.nav-link:hover::after {
+  transform: scaleX(0.8);/* 鼠标悬停时线段长度缩放为80% */
+}
+
+/* 一级标题样式 */
+.h1 {
+  background-color:#1E90FF; 
+  color: white;
+  font-size: 32px;
+  margin-top: 30px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* 二级标题样式 */
+.h2 {
+  color: #091E3E;
+  font-size: 24px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+/* 二级标题下划线样式 */
+.underline {
+  background-color: #1E90FF;
+  height: 3px;
+  margin: auto; 
+  position: relative;
+  width: 20%;  
+}
+
+/* 二级标题下划线上移动点样式 */
+.underline:before {
+  animation: move 2s linear
+  infinite;
+  background-color: white;
+  border-radius: 50%;
+  content: '';
+  height: 5px;
+  left: 0;
+  position: absolute;
+  width: 5px;
+}
+
+/* 二级标题下划线上移动点动画 */
+@keyframes move {
+  0%, 100% {
+      left: 0;
+  }
+  100% {
+      left: 100%;
+  }
+}
+
+/* 三级标题样式 */
+.h3 {
+  color: #086FBE;
+  font-size: 20px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+/* 正文部分的字体大小和行距 */
+.text {
+  font-size: 18px;
+  line-height: 3;
+  flex: 1;
+}
+
+/* 正文居中部分的字体大小和行距 */
+.text-center {
+  font-size: 18px;
+  line-height: 3;
+  flex: 1;
+  text-align: center;
+}
+
+  /* 正文举例部分的字体大小和行距 */
+.text-eg {
+  color: #555555;
+  font-size: 18px;
+  line-height: 3;
+  flex: 1;
+  text-align: center;
+  margin: 20px
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px;
+}
+
+/* 第一类图片的格式 */
+.image1 {
+  width: 50%;
+}
+
+/* 第二类图片的格式 */
+.image2 {
+  width: 60%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+/* 第三类图片的格式 */
+.image3 {
+  width: 95%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+/* ksa页面表格样式 */
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 20px auto; /* 使表格居中 */
+}
+
+td {
+  border: 1px solid black;
+  padding: 20px;
+  text-align: middle;
+  background-color: #EEF9FF;
+}
+
+th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: middle;
+  background-color: #086FBE;
+  color: white;
+}
+
+/* star页面方块样式 */
+.box {
+  background-color: #EEF9FF;
+  width: 30%;
+  height: 30%;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* star页面小方块样式 */
+.small-box {
+  background-color: #1E90FF;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  padding: 10px;
+  display: flex; 
+  justify-content: center; /* 将内容水平居中 */
+  align-items: center; /* 将内容垂直居中 */
+  transform: rotate(45deg); /* 旋转 45 度 */
+}
+
+
+/* 小方块内部放大镜图标的样式 */
+.small-box .fa-search {
+  color: white; /* 设置图标颜色为白色 */
+  font-size: 18px; /* 设置图标大小 */
+  transform: rotate(-45deg);
+}
+
+/* 方块内部heading样式 */
+.heading {
+  font-size: 24px;
+  margin: 5px 0;
+  padding-top: 10px;
+  color: #091E3E;
+}
